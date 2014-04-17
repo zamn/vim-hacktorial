@@ -6,7 +6,9 @@ This is a hacktorial to show people whom are curious about vim, what its about, 
 It helps to have ruby installed as that will be what our various sample files are in (if you plan on running them). Also, if this isn't already given you should install vim.
 
 Linux (Ubuntu)
+
 ``` sudo apt-get install vim ```
 
 Windows
+
 ftp://ftp.vim.org/pub/vim/pc/gvim74.exe
