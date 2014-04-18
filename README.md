@@ -4,6 +4,16 @@ This is a hacktorial to show people whom are curious about vim, what its about, 
 
 It helps to have ruby installed as that will be what our various sample files are in (if you plan on running them). Also, if this isn't already given you should install vim.
 
+## Overview
+
+* Modes
+* Line Movement
+* Screen Movement
+* Actions
+* Macros
+* Searching
+* Plugins (?)
+
 ## Installs
 
 Linux (Ubuntu)
@@ -15,5 +25,7 @@ sudo apt-get install ruby
 
 Windows
 
+```
 ftp://ftp.vim.org/pub/vim/pc/gvim74.exe 
 http://rubyinstaller.org/downloads/
+```
