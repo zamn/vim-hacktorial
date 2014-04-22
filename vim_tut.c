@@ -2,19 +2,19 @@
 #include <string.h>
 
 /*
- * You've stumbled into vim! Right now you are in command mode (by default), try using hjkl to move around. 
+ * You've stumbled into vim! Right now you are in normal mode (by default), try using hjkl to move around. 
  * Make sure caps lock is off before trying it otherwise you may get hurt!
  *
  * Help! How do I leave this stupid editor?!
- * - In command mode (hit enter after typing these):
+ * - In normal mode (hit enter after typing these):
  *   - :wq (write and quit)
  *   - :q! (quit without saving)
  * - In insert mode:
- *   - Hit escape to get into command mode, then goto: command mode instructions.
+ *   - Hit escape to get into normal mode, then goto: normal mode instructions.
  *
  * Misc Tips:
- * - While in command mode try (hit enter after typing these):
- *   - :line_number, i.e. :23
+ * - While in normal mode try:
+ *   - :line_number, i.e. :23 (enter after)
  *   - ctrl+g
  *
  */
@@ -67,7 +67,7 @@ void screen_movement() {
 /*
  * Okay, enough with this movement crud, I want to start typing because this is a text editor!
  * Fine! (I'm literally talking to myself right now)
- * Try out I or i (insert) in the printf below (remember: you can hit escape to go back into command mode).
+ * Try out I or i (insert) in the printf below (remember: you can hit escape to go back into normal mode).
  * Alternatively, try out A and a (append).
  * These two keys will allow you to insert text after hitting them (all keys will act normal when in insert mode)
  */
@@ -80,7 +80,7 @@ void insertion1() {
  * Well, we will start out with the basics. Hit x to delete a character. Since you may want to undo that
  * you can hit u to undo.
  *
- * NOTE: If at any time you screw up this document you can leave it (without saving) by doing :q! (while in command mode)
+ * NOTE: If at any time you screw up this document you can leave it (without saving) by doing :q! (while in normal mode)
  */
 void insertion2() {
     /* Stupid kitty won't be quiet when I talk.. lets just delete his meow ^_^ */
