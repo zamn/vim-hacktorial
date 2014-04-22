@@ -19,6 +19,8 @@
  *
  */
 
+int a = 0;
+
 /*
  * Line/Character Movement
  * Use hjkl to navigate this function.
@@ -64,8 +66,46 @@ void screen_movement() {
 
 /*
  * Okay, enough with this movement crud, I want to start typing because this is a text editor!
+ * Fine! (I'm literally talking to myself right now)
+ * Try out I or i (insert) in the printf below (remember: you can hit escape to go back into command mode).
+ * Alternatively, try out A and a (append).
+ * These two keys will allow you to insert text after hitting them (all keys will act normal when in insert mode)
  */
 void insertion1() {
+    printf("Here is a sentence that should have stuff inserted into it");
+}
+
+/*
+ * So..now that we can insert..how do we delete?!
+ * Well, we will start out with the basics. Hit x to delete a character. Since you may want to undo that
+ * you can hit u to undo.
+ *
+ * NOTE: If at any time you screw up this document you can leave it (without saving) by doing :q! (while in command mode)
+ */
+void insertion2() {
+    /* Stupid kitty won't be quiet when I talk.. lets just delete his meow ^_^ */
+    printf("Here is a *meow* sentence that should have stuff inserted into it");
+}
+
+/*
+ * Okay, so we know how to move around and insert stuff. So lets see if you can
+ * put what we've learned so far into practice. Take the comment below and make
+ * it an argument to the name() function.
+ */
+void insertion3() {
+    /* "Here is a string that should be printed, but how will you do it?!" */
+}
+
+/*
+ * Now we can talk a bit about some misc. insertion commands. Primarily o, O, <<, and >>
+ * Try out o and O to create new lines (putting you in insertion mode afterwards)
+ * If you'd like to format your lines try using >> and <<
+ */
+void insertion4() {
+    /* At the top of the program a is declared to 0 */
+    /* We need to redefine a to be 5 */
+    printf("this integer has the value of 5: %d\n", a);
+printf("ew, we have really bad formatting. we should fix this.");
 }
 
 int main(void) {
