@@ -5,6 +5,8 @@
  * You've stumbled into vim! Right now you are in normal mode (by default), try using hjkl to move around. 
  * Make sure caps lock is off before trying it otherwise you may get hurt!
  *
+ * NOTE: If at any time you accidentally bork the system you can quit without saving doing :q!
+ *
  * Help! How do I leave this stupid editor?!
  * - In normal mode (hit enter after typing these):
  *   - :wq (write and quit)
@@ -16,6 +18,7 @@
  * - While in normal mode try:
  *   - :line_number, i.e. :23 (enter after)
  *   - ctrl+g
+ *   - %, moves your cursor to a closing bracket (works for parens, { }, [ ], and most others)
  *
  */
 
@@ -68,7 +71,7 @@ void screen_movement() {
  * Okay, enough with this movement crud, I want to start typing because this is a text editor!
  * Fine! (I'm literally talking to myself right now)
  * Try out I or i (insert) in the printf below (remember: you can hit escape to go back into normal mode).
- * Alternatively, try out A and a (append).
+ * Try out A and a (append) in the printf below as well.
  * These two keys will allow you to insert text after hitting them (all keys will act normal when in insert mode)
  */
 void insertion1() {
@@ -78,7 +81,7 @@ void insertion1() {
 /*
  * So..now that we can insert..how do we delete?!
  * Well, we will start out with the basics. Hit x to delete a character. Since you may want to undo that
- * you can hit u to undo.
+ * you can hit u to undo; if you'd like to re-do use ctrl+r.
  *
  * NOTE: If at any time you screw up this document you can leave it (without saving) by doing :q! (while in normal mode)
  */
@@ -100,12 +103,63 @@ void insertion3() {
  * Now we can talk a bit about some misc. insertion commands. Primarily o, O, <<, and >>
  * Try out o and O to create new lines (putting you in insertion mode afterwards)
  * If you'd like to format your lines try using >> and <<
+ * Want vim to automagically format for you? == on the current line saves you tons of trouble.
+ * Want to format the whole document?! You crazy <gender>! Try doing =G (take a look at shortcuts() after)
+ * Later we will see more magic we can do with formatting!
  */
 void insertion4() {
     /* At the top of the program a is declared to 0 */
     /* We need to redefine a to be 5 */
     printf("this integer has the value of 5: %d\n", a);
+
 printf("ew, we have really bad formatting. we should fix this.");
+printf("arg, we have really bad habits");
+                    printf("yeah, physics");
+    printf("hi");
+}
+
+/*
+ * So now we have the *basics* down, we can get to the more fun stuff. 
+ * When using the more advanced features of vim you will see many people refer
+ * to some actions as 'talking to vim'. Some commands we enter will be in the format
+ * of 'verb modifier object' (this means three 2-3 presses in a row). 
+ * Yes, it seems weird how a text editors commands can be thought of as 'verbs', 
+ * 'modifiers', and 'objects' but once you understand this you can unlock the power of vim.
+ *
+ * We'll start off with the verbs. These are the verbs we'll talk about:
+ * - c (means change)
+ * - d (means delete)
+ * - y (means yank or copy, touched on later)
+ * - v (means visual, which we will touch on later in the visual mode section)
+ *
+ * We will focus primarily on 'c' and 'd' for this exercise until we learn modifiers.
+ * When typing a verb twice (excluding v) it will perform that verb on the whole line
+ * your cursor is on.
+ *
+ * Try typing: dd on the printf() below. Additionally, try out doing cc and observe
+ * their differences.
+ *
+ * Want a taste of modifiers?
+ * Try typing: d$ on the longer printf(). Additionally, try doing c$ and observe.
+ *
+ */
+void verbs() {
+    /* This printf should be deleted.. but we want to delete the whole line at once */
+    printf("Delete me!");
+    printf("Here is a sentence that is moderately long but should be deleted halfway through");
+}
+
+/*
+ * So now that we've seen the verbs we will talk about the modifiers we can use in conjunction
+ * with these verbs.
+ *
+ * These modifiers include: 
+ * - i (means inside)
+ * - t (means till)
+ * - f (means find)
+ *
+ */
+void modifiers() {
 }
 
 int main(void) {
