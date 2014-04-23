@@ -2,6 +2,11 @@
 #include <string.h>
 
 /*
+ * Author: Adam Hamot
+ * References: http://yanpritzker.com/2011/12/16/learn-to-speak-vim-verbs-nouns-and-modifiers/
+ */
+
+/*
  * You've stumbled into vim! Right now you are in normal mode (by default), try using hjkl to move around. 
  * Make sure caps lock is off before trying it otherwise you may get hurt!
  *
@@ -122,7 +127,7 @@ printf("arg, we have really bad habits");
  * So now we have the *basics* down, we can get to the more fun stuff. 
  * When using the more advanced features of vim you will see many people refer
  * to some actions as 'talking to vim'. Some commands we enter will be in the format
- * of 'verb modifier object' (this means three 2-3 presses in a row). 
+ * of 'verb [modifier] object' (this means three 2-3 presses in a row). 
  * Yes, it seems weird how a text editors commands can be thought of as 'verbs', 
  * 'modifiers', and 'objects' but once you understand this you can unlock the power of vim.
  *
@@ -158,8 +163,111 @@ void verbs() {
  * - t (means till)
  * - f (means find)
  *
+ * Modifiers are sort of useless without our text objects at this point so lets introduce
+ * what we will be using:
+ * - w (means word)
+ * - ", ', (), [], {}, <space>, $, anything you can think of
+ *
+ * As you can see we aren't going over very many modifiers as we only need a couple to
+ * show the power of vim. Additionally you should know there are other modifiers that
+ * you can find in the references section.
+ *
  */
-void modifiers() {
+void power1() {
+    /* Try using dw (delete word) on one of the words below. */
+    printf("Here is a printf where we have a bunch of words and little time!");
+    /* 
+     * Hm, there is too much friction with dw! I want something fast.
+     * Try using cw (change word) then! 
+     */
+    printf("Here is a printf where we have a bunch of words and little time!");
+    /* 
+     * I want to modify part of this sentence so that I can change the second
+     * half of it and keep on working.
+     * Try doing ct" (change till we hit a ") when your cursor is on 'b' of 'bunch'
+     * Alternatively we can do dt" which will do the same thing except keep you
+     * in Normal mode.
+     */
+    printf("Here is a printf where we have a bunch of words and little time!");
+    /*
+     * I really want to change what is inside of this stupid printf but my
+     * restless hand syndrome won't let me highlight the words! What will I do?!
+     * Try doing: ci" (change inside ") anywhere inside of the ""
+     * Alternatively, you can navigate to the 'H' in 'Here' and type ct"
+     */
+    printf("Here is a printf where we have a bunch of words and little time!");
+    /*
+     * Extra printf()'s to have fun with.
+     */
+    printf("Here is a printf where we have a bunch of words and little time!");
+    printf("Here is a printf where we have a bunch of words and little time!");
+    printf("Here is a printf where we have a bunch of words and little time!");
+    printf("Here is a printf where we have a bunch of words and little time!");
+    printf("Here is a printf where we have a bunch of words and little time!");
+    printf("Here is a printf where we have a bunch of words and little time!");
+    printf("Here is a printf where we have a bunch of words and little time!");
+    printf("Here is a printf where we have a bunch of words and little time!");
+}
+
+/*
+ * Now that we've seen the verbs 'delete' and 'change' we can take a look at
+ * visual. Notice how each of the different combinations we make can all be used
+ * with various different verbs. For example, dt" can also be done with ct" or
+ * now, vt"
+ * Another one is simply, vi"
+ * Or another one: vw
+ *
+ * ------------------------------------------------------------------------------
+ * Why can't we do vv? This is because when we hit v we are actually going into
+ * 'Visual Mode' which allows us to visually select certain things. So by hitting
+ * v and then hitting it again you are simply toggling between visual mode being
+ * on and off.
+ * ------------------------------------------------------------------------------
+ *
+ * You'll notice after running these commands that text is highlighted rather than
+ * instantly deleted. This is great if you want to copy and paste (or yank and paste
+ * as vim calls it, we will cover this next). Another use case is simply *seeing* 
+ * what you delete or change before you actually do it. If you try one of the commands 
+ * above and then hit d (delete) or c (change), those respective commands will take place. 
+ * Additionally you can even type x (delete char) which will act as 'delete selection'.
+ */
+void visual() {
+    printf("Here is a printf where we have a bunch of words and little time!");
+    printf("Here is a printf where we have a bunch of words and little time!");
+    printf("Here is a printf where we have a bunch of words and little time!");
+    printf("Here is a printf where we have a bunch of words and little time!");
+}
+
+/*
+ * Now that we've seen all of the various verbs we can *finally* talk about copy and pasting!
+ * VIM calls these yank and paste (not sure where yank comes from).
+ * You yank something by typing y and either a text object w (word) or $ (end of line).
+ * Additionally, like with the other verbs you can type yy to copy the whole line.
+ *
+ * We can combine this functionality with the visual mode to copy blocks of things
+ * quickly and efficiently. Pro tip: hitting shift+V does some cool things, check it out!
+ *
+ * But how do we paste? We can paste by typing:
+ * P - paste before cursor
+ * p - paste after cursor
+ *
+ * If we're dealing with lines ((Shift + V) + y):
+ * P - paste above cursor
+ * p - paste below cursor
+ *
+ * So lets try to copy and paste something
+ *
+ */
+void copypasta() {
+    /* comments here blah */
+    /* Can you make a box?! */
+    /* How long can you make the box? */
+    printf(" ------------------------------ ");
+    printf("|                              |");
+
+    /* Copy the word blah from this printf */
+    printf("Here is the word i want to copy: blah");
+    printf("The word I copied was: ");
 }
 
 int main(void) {
