@@ -249,6 +249,7 @@ void visual() {
     /*
      * We can also use comment blocks in conjunction with r to do some really cool things.
      * Check out ctrl + v.
+     * Don't like r? We can even use c.
      */
     client_data = 
         "Adam         867 5309"
@@ -262,6 +263,13 @@ void visual() {
  * VIM calls these yank and paste (not sure where yank comes from).
  * You yank something by typing y and either a text object w (word) or $ (end of line).
  * Additionally, like with the other verbs you can type yy to copy the whole line.
+ *
+ * ----------------------------------------------------------------------------------------------
+ * Note: Any time you delete something in vim using d, c, x, etc the contents of what you deleted
+ * WILL be placed onto your clipboard. This could prove disastrous so be careful of what you 
+ * delete while you have something in your clipboard. There is a way around this, but we won't get
+ * into that today.
+ * ----------------------------------------------------------------------------------------------
  *
  * We can combine this functionality with the visual mode to copy blocks of things
  * quickly and efficiently. Pro tip: hitting shift+V does some cool things, check it out!
@@ -318,6 +326,56 @@ void macros() {
     sentences[7] = "This is an array of sentences..i wonder what it would be used for";
     sentences[8] = "C is pretty great..right?!";
     sentences[9] = "VIM is the best.";
+}
+
+/*
+ * Another useful feature in VIM is searching. You can type /<search_term> to search
+ * for a specific term in the document.
+ *
+ * If you're using the supplied vimrc, then typing /sentences should highlight the word
+ * 'sentences' and take you to the first occurrence. To place your cursor on further 
+ * occurrences type '/', to go to previous occurrences type '?'.
+ *
+ * Another way to search without typing is to simply hover over the word and hitting '*'.
+ *
+ * To unhighlight, the easiest way is to just type /<word that doesnt exist in doc>. 
+ * It may seem not very elegant but I haven't found a way around that yet.
+ *
+ */
+void search_and_change() {
+    /* Lets say we want to change what is in name(), how can we do that? */
+}
+
+/*
+ * Splits are another feature of vim that are hugely powerful and allow you to do so much with 
+ * such little effort. Lets say we want to edit various files at the same time, such as the Makefile 
+ * in this directory.
+ *
+ * ctrl + w + v -- creates a verticle split 
+ * My VIMRC features:
+ * ctrl + l -- moves to the right split
+ * ctrl + h -- moves to the left split
+ * ctrl + {h,j,k,l} -- moves the direction split that the key moves
+ *
+ * Once in the other split, type :e Makefile (Pro tip: hitting <tab> will show you all files you can edit)
+ * This will open the file 'Makefile' that is in the cwd. If that file does not exist, vim will create it
+ * when you save it. 
+ *
+ * You can treat this split as a normal vim session and :q when you are finished.
+ */
+void splits() {
+}
+
+/*
+ * In the macros() example, lets say we want to rename the sentences array to 
+ * be named 'stringz' instead. We can accomplish this by utilizing EX Mode.
+ *
+ * Any time you type : you are entered into 'EX mode'. This mode essentially allows
+ * you to enter commands into vim rather than doing it through the document.
+ *
+ * :%s/sentences/stringz/g -- this has problems (but 'works')
+ */
+void ex_mode() {
 }
 
 int main(void) {
