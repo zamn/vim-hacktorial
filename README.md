@@ -9,7 +9,7 @@ It helps to have ruby installed as that will be what our various sample files ar
 * Modes
 * Line Movement
 * Screen Movement
-* Actions
+* Verbs/Modifiers/Objects
 * Macros
 * Searching
 * Plugins (?)
@@ -20,12 +20,23 @@ Linux (Ubuntu)
 
 ``` 
 sudo apt-get install vim 
-sudo apt-get install ruby
 ```
 
 Windows
 
-```
 ftp://ftp.vim.org/pub/vim/pc/gvim74.exe 
-http://rubyinstaller.org/downloads/
+
+## Instructions
+
+Place the .vimrc in the respective directory for your OS below:
+
+Mac/Linux
+
+```
+mv .vimrc /home/your_username
+```
+
+Windows
+```
+C:\Users\your_username
 ```
