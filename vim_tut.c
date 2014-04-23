@@ -71,7 +71,7 @@ printf("Here are some movement shortcuts.\n");
  * If you're like me then your OCD may be kicking in and you like having your text center on screen.
  * Lucky for us, vim lets us do that! Try hitting zz (center), zt (cursor top), zb (cursor bottom)
  * But wait! We want to reference something at the top of the screen..how do we do that?
- * You can use ctrl+u/d to move page up/down.
+ * You can use ctrl+u/d to navigate the page faster. The vim pg up/dn is doing: ctrl+f/b.
  * Alternatively, you can use :line_number to move around. An example would be doing, :0 or :$
  */
 void screen_movement() {
@@ -80,7 +80,7 @@ void screen_movement() {
 
 /*
  * Okay, enough with this movement crud, I want to start typing because this is a text editor!
- * Fine! (I'm literally talking to myself right now)
+ * Fine! 
  * Try out I or i (insert) in the printf below (remember: you can hit escape to go back into normal mode).
  * Try out A and a (append) in the printf below as well.
  * These two keys will allow you to insert text after hitting them (all keys will act normal when in insert mode)
@@ -342,7 +342,7 @@ void macros() {
  * The 'backwards' version of that is doing #.
  *
  * To unhighlight, the easiest way is to just type /<word that doesnt exist in doc>. 
- * It may seem not very elegant but I haven't found a way around that yet.
+ * It may seem not very elegant but it works. 
  *
  */
 void search_and_change() {
