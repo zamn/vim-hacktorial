@@ -127,7 +127,7 @@ printf("arg, we have really bad habits");
  * So now we have the *basics* down, we can get to the more fun stuff. 
  * When using the more advanced features of vim you will see many people refer
  * to some actions as 'talking to vim'. Some commands we enter will be in the format
- * of 'verb [modifier] object' (this means three 2-3 presses in a row). 
+ * of 'verb [modifier] object' (this means three 2-3 key presses in a row). 
  * Yes, it seems weird how a text editors commands can be thought of as 'verbs', 
  * 'modifiers', and 'objects' but once you understand this you can unlock the power of vim.
  *
@@ -166,7 +166,7 @@ void verbs() {
  * Modifiers are sort of useless without our text objects at this point so lets introduce
  * what we will be using:
  * - w (means word)
- * - ", ', (), [], {}, <space>, $, anything you can think of
+ * - ", ', (, ), [, ], {, }, <space>, $, any single chars you can think of
  *
  * As you can see we aren't going over very many modifiers as we only need a couple to
  * show the power of vim. Additionally you should know there are other modifiers that
