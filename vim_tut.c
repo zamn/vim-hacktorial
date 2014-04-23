@@ -333,10 +333,11 @@ void macros() {
  * for a specific term in the document.
  *
  * If you're using the supplied vimrc, then typing /sentences should highlight the word
- * 'sentences' and take you to the first occurrence. To place your cursor on further 
- * occurrences type '/', to go to previous occurrences type '?'.
+ * 'sentences' and take you to the first occurrence. To place your cursor on the next
+ * occurrences type / or N, to go to previous occurrences type ? or n.
  *
- * Another way to search without typing is to simply hover over the word and hitting '*'.
+ * Another way to search without typing is to simply hover over the word and hitting *.
+ * The 'backwards' version of that is doing #.
  *
  * To unhighlight, the easiest way is to just type /<word that doesnt exist in doc>. 
  * It may seem not very elegant but I haven't found a way around that yet.
