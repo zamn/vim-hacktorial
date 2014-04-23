@@ -24,6 +24,7 @@
  *   - :line_number, i.e. :23 (enter after)
  *   - ctrl+g
  *   - %, moves your cursor to a closing bracket (works for parens, { }, [ ], and most others)
+ *   - :make, makes the file (enter after typing)
  *
  */
 
@@ -43,6 +44,9 @@ void name(char* name) {
  * Hey, what if we wanted to move down 10 lines? Try doing 10j
  * Cool, so we can prepend numbers to commands. What about moving forward 5 words? Try 5w
  * 5 words backwards? (hint: b is to move through words backwards)
+ * 
+ * You can actually do many of the commands we'll talk about X number of times. If you 
+ * aren't sure, try it out.
  */
 void movement1() {
     printf("Don't mind me..just moving");
@@ -93,6 +97,10 @@ void insertion1() {
 void insertion2() {
     /* Stupid kitty won't be quiet when I talk.. lets just delete his meow ^_^ */
     printf("Here is a *meow* sentence that should have stuff inserted into it");
+
+    /* Whats a shortcut for deleting a character and inserting a new one in its place? */
+    /* Replace! Try hitting r on the 'b' in 'bat' and changing it to 'r' */
+    printf("Lets get the toy bat for kitty");
 }
 
 /*
@@ -232,10 +240,21 @@ void power1() {
  * Additionally you can even type x (delete char) which will act as 'delete selection'.
  */
 void visual() {
+    char* client_data;
     printf("Here is a printf where we have a bunch of words and little time!");
     printf("Here is a printf where we have a bunch of words and little time!");
     printf("Here is a printf where we have a bunch of words and little time!");
     printf("Here is a printf where we have a bunch of words and little time!");
+
+    /*
+     * We can also use comment blocks in conjunction with r to do some really cool things.
+     * Check out ctrl + v.
+     */
+    client_data = 
+        "Adam         867 5309"
+        "Jim          257 1902"
+        "Cindy        821 1287"
+        "Bob          123 4569";
 }
 
 /*
@@ -270,10 +289,42 @@ void copypasta() {
     printf("The word I copied was: ");
 }
 
+/*
+ * Now that we've covered mostly all of the fun jazz for tonight we shall
+ * talk about one of the biggest timesavers! MACROS. These allow you to 
+ * bind a series of actions to a key and allow you to do that action every time you press
+ * the key.
+ *
+ * You create a macro by doing: q<letter you want bound>
+ * - Then you start doing your actions
+ * - q to end
+ *
+ * Then you type @<letter> to repeat that action.
+ */
+void macros() {
+    char* sentences[10];
+    /* Yeah, uhm, I'm gonna have to ask you to make all of these strings empty. */
+    /* Lucky for us, we know macros! */
+    /* Record a macro which will move to inside of the string and then hit di" */
+    /* When done, hit j to move down a line and then hit q to stop recording */
+    /* Then we can use and abuse that macro. :D */
+    sentences[0] = "Hello world";
+    sentences[1] = "How are you doing today? Splendid!";
+    sentences[2] = "This is just some random words so we have uneven strings";
+    sentences[3] = "Using vim is pretty ossum, wouldn't ye say? ";
+    sentences[4] = "                     ";
+    sentences[5] = " _ I'm having too much fun right now ^_^ ";
+    sentences[6] = "Blarg. The robots are here. ";
+    sentences[7] = "This is an array of sentences..i wonder what it would be used for";
+    sentences[8] = "C is pretty great..right?!";
+    sentences[9] = "VIM is the best.";
+}
+
 int main(void) {
     /* This name isn't in the same case. My OCD is kicking in, what do?! */
     /* Luckily, we have the ~ key! Move your cursor over the name and hit ~ */
-    char* my_name = "ArIStotLe";
+    /* Another cool trick: guiw */
+    char* my_name = "AriStotLe";
     name(my_name);
     shortcuts();
     return 0;
