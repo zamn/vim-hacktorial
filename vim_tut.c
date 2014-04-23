@@ -3,7 +3,9 @@
 
 /*
  * Author: Adam Hamot
- * References: http://yanpritzker.com/2011/12/16/learn-to-speak-vim-verbs-nouns-and-modifiers/
+ * References: 
+ * http://yanpritzker.com/2011/12/16/learn-to-speak-vim-verbs-nouns-and-modifiers/
+ * http://en.wikibooks.org/wiki/Learning_the_vi_Editor/Vim/Modes
  */
 
 /*
